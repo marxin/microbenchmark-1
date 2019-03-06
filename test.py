@@ -15,7 +15,7 @@ def test(i, options):
     times = []
     for x in range(runs):
         start = time.time()
-        subprocess.check_output('./a.out', shell = True)
+        subprocess.check_output('taskset 1 ./a.out', shell = True)
         end = time.time()
         times.append(end - start)
 
